@@ -1,9 +1,19 @@
-<div class ="edit"></div>
-    <h1>{% if form.instance.pk %}Update{% else %}Create{% endif %} Product</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
-    </form>
-    <a href="{% url 'product_list' %}">Back to Product List</a>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if form.instance.pk %}Update{% else %}Create{% endif %} Product</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style_list.css' %}">
+</head>
+<body>
+    <div class="edit">
+        <h1>{% if form.instance.pk %}Update{% else %}Create{% endif %} Product</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">{% if form.instance.pk %}Update{% else %}Create{% endif %}</button>
+        </form>
+        <a href="{% url 'product_list' %}">Back to Product List</a>
+    </div>
+</body>
+</html>

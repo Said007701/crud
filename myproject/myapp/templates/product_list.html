@@ -26,8 +26,8 @@
                     <td>{{ product.price }}</td>
                     <td class="actions">
                         
-                        <a href="{% url 'update_product' product.pk %}" class="edit">Edit</a>
-                        <a href="{% url 'delete_product' product.pk %}" class="delete">Delete</a>
+                        <a href="{% url 'update_product' product.pk %}" class="edit">✏️</a>
+                        <a href="{% url 'delete_product' product.pk %}" class="delete">🗑️</a>
                     </td>
                 </tr>
                 {% endfor %}
